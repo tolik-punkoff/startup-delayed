@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MainDataSet" targetNamespace="http://tempuri.org/MainDataSet.xsd" xmlns:mstns="http://tempuri.org/MainDataSet.xsd" xmlns="http://tempuri.org/MainDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MainDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="MainDataSet" msprop:Generator_DataSetName="MainDataSet" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StartupTasks" msprop:Generator_UserTableName="StartupTasks" msprop:Generator_RowDeletedName="StartupTasksRowDeleted" msprop:Generator_RowChangedName="StartupTasksRowChanged" msprop:Generator_RowClassName="StartupTasksRow" msprop:Generator_RowChangingName="StartupTasksRowChanging" msprop:Generator_RowEvArgName="StartupTasksRowChangeEvent" msprop:Generator_RowEvHandlerName="StartupTasksRowChangeEventHandler" msprop:Generator_TableClassName="StartupTasksDataTable" msprop:Generator_TableVarName="tableStartupTasks" msprop:Generator_RowDeletingName="StartupTasksRowDeleting" msprop:Generator_TablePropName="StartupTasks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="TaskName" msprop:Generator_UserColumnName="TaskName" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="TaskName" msprop:Generator_ColumnPropNameInTable="TaskNameColumn" msprop:Generator_ColumnVarNameInTable="columnTaskName" type="xs:string" />
+              <xs:element name="TaskPath" msprop:Generator_UserColumnName="TaskPath" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="TaskPath" msprop:Generator_ColumnPropNameInTable="TaskPathColumn" msprop:Generator_ColumnVarNameInTable="columnTaskPath" type="xs:string" />
+              <xs:element name="Parameters" msprop:Generator_UserColumnName="Parameters" msprop:Generator_ColumnVarNameInTable="columnParameters" msprop:Generator_ColumnPropNameInRow="Parameters" msprop:Generator_ColumnPropNameInTable="ParametersColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkingDirectory" msprop:Generator_UserColumnName="WorkingDirectory" msprop:Generator_ColumnVarNameInTable="columnWorkingDirectory" msprop:Generator_ColumnPropNameInRow="WorkingDirectory" msprop:Generator_ColumnPropNameInTable="WorkingDirectoryColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="WindowStyle" msdata:DataType="System.Diagnostics.ProcessWindowStyle, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="WindowStyle" msprop:Generator_ColumnVarNameInTable="columnWindowStyle" msprop:Generator_ColumnPropNameInRow="WindowStyle" msprop:Generator_ColumnPropNameInTable="WindowStyleColumn" type="xs:anyType" minOccurs="0" />
+              <xs:element name="AsAdmin" msprop:Generator_UserColumnName="AsAdmin" msprop:Generator_ColumnPropNameInRow="AsAdmin" msprop:Generator_ColumnVarNameInTable="columnAsAdmin" msprop:Generator_ColumnPropNameInTable="AsAdminColumn" type="xs:boolean" default="false" />
+              <xs:element name="ActiveTask" msprop:Generator_UserColumnName="ActiveTask" msprop:Generator_ColumnPropNameInRow="ActiveTask" msprop:Generator_ColumnVarNameInTable="columnActiveTask" msprop:Generator_ColumnPropNameInTable="ActiveTaskColumn" type="xs:boolean" default="true" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StartupTasks" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

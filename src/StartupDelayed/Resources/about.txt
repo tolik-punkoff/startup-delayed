@@ -1,0 +1,38 @@
+addfont; Arial;9;Bold;Group;
+addfont; Microsoft Sans Serif;8;Regular;Names;
+addfont; Arial;14;Bold;Slogan;
+
+scene;20;
+addstring;StartupDelayed;Group;
+addstring;v 0.0.1b;Group;
+addstring;Распространяется бесплатно;Names;
+addstring;                      ;Names;
+addstring;Developers;Group;
+addstring;[Wildsoft];Group;
+addstring;                      ;Names;
+addstring;Специально для;Group;
+addstring;ИП Сорокопут;Names;
+addstring;Code by;Group;
+addstring;PunkArr[];Names;
+addstring;Leha Silent;Names;
+addstring;NKT;Names;
+addstring;Chaos. Cry. Destruction.;Group;
+addstring;Сорокопут Б.П.;Names;
+addstring;Testing;Group;
+addstring;Leha Silent;Names;
+addstring;Сорокопут Б.П.;Names;
+addstring;PunkArr[];Names;
+addstring;Beer & Samogon;Group;
+addstring;Сорокопут Б.П.;Names;
+addstring;Сорокопут Н.Я.;Names;
+
+scene;20;3000; ~сцена 2
+
+addstring;Об ошибках и предложениях;Names
+addstring;пишите на сайты:;Names
+addstring;http://lj.rossia.org/users/hex_laden;Names;87 CE EB;
+addstring;http://tolik-punkoff.com;Names;87 CE EB;
+
+scene;20;10000; ~сцена со слоганом
+
+addstring;Make code, not war C# like you.;Slogan;FF FF 00;
