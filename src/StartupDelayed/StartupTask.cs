@@ -39,7 +39,29 @@ namespace StartupDelayed
         public bool Exist()
         {
             if (string.IsNullOrEmpty(TaskPath)) return false;
-            return File.Exists(TaskPath);
+
+            DriveInfo[] drives = DriveInfo.GetDrives();
+            List<string> drNames = new List<string>();
+
+            string drName = GetDriveName(TaskPath);
+            if (drName == string.Empty)
+            {
+                return File.Exists(TaskPath);
+            }
+            else
+            {
+                foreach (DriveInfo drive in drives)
+                {
+                    drNames.Add(GetDriveName(drive.Name));
+                }
+
+                if (drNames.Contains(drName))
+                {
+                    return File.Exists(TaskPath);
+                }
+                else
+                    return false;
+            }
         }
 
         private bool IsExecute()
@@ -58,6 +80,13 @@ namespace StartupDelayed
 
             return pricipal.IsInRole(
                 WindowsBuiltInRole.Administrator);
+        }
+
+        private string GetDriveName(string sPath)
+        {
+            int colPos = sPath.IndexOf(':');
+            if (colPos < 0) return string.Empty;
+            return sPath.Substring(0, colPos);
         }
 
         public bool Run()
@@ -109,6 +138,6 @@ namespace StartupDelayed
                 return false;
             }
             return true;
-        }
+        }        
     }
 }

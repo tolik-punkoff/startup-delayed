@@ -12,7 +12,7 @@ namespace StartupDelayed
         {
             string StartupDirectory = Environment.GetFolderPath(
                 Environment.SpecialFolder.Startup);
-            string LNKName = "\\DelayedStartup.lnk";
+            string LNKName = "\\StartupDelayed.lnk";
             string Target = Application.ExecutablePath;
             string WorkDir = Application.StartupPath;
 
@@ -28,10 +28,7 @@ namespace StartupDelayed
             {
                 shortcut.Arguments = shortcut.Arguments + "/d";
             }
-            if (CommonClass.ConfDir) //параметр ConfDir
-            {
-                shortcut.Arguments = shortcut.Arguments + "/confdir "+CommonClass.ConfigPath;
-            }
+            
             shortcut.DisplayMode = ShellLink.LinkDisplayMode.edmNormal;
             shortcut.Save();
         }

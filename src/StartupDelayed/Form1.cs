@@ -276,6 +276,12 @@ namespace StartupDelayed
 
             TaskMan.dsTasks.Tables["StartupTasks"].Rows.Remove(dr);
 
+            if (!TaskMan.SaveTasks())
+            {
+                MessageBox.Show(TaskMan.ErrorMessage, "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+                return;
+            }
         }
 
         private void mnuEditEdit_Click(object sender, EventArgs e)

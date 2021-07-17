@@ -13,7 +13,8 @@ namespace StartupDelayed
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(false);            
+
             string cline = Environment.CommandLine.ToLowerInvariant();
             if (cline.IndexOf("/help") != -1)
             {
@@ -21,19 +22,8 @@ namespace StartupDelayed
                 return;
             }
 
-            if ((cline.IndexOf("/d") != -1) && (cline.IndexOf("/confdir") != -1))
-            {
-                MessageBox.Show("Укажите параметр /confdir <путь> или /d",
-                        "Ошибка параметров командной строки", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-
-                Application.Run(new frmCLIHelp());
-                return;
-            }
-
             //анализируем остальные параметры.
             int i = 0;
-            int confdirN = 0;            
             string[] cliargs = Environment.GetCommandLineArgs();
             foreach (string arg in cliargs)
             {                
@@ -48,40 +38,17 @@ namespace StartupDelayed
                                 (Environment.SpecialFolder.LocalApplicationData)
                                 + "\\StartupDelayed\\";
                             CommonClass.NoPortable = true;
-                        }; break;
-                    case "/confdir":
-                        {
-                            confdirN = i;
-                            CommonClass.ConfDir = true;
-                        } break;
+                        }; break;                    
                 }                
             }
-            //проверяем путь в confdir
-            if (confdirN > 0)
-            {
-                if (confdirN < cliargs.Length)
-                {
-                    CommonClass.ConfigPath = CommonClass.AddSlash(cliargs[confdirN]);
-                }
-                else //параметр /confdir есть, а путь не указан
-                {
-                    MessageBox.Show("Не указан путь после параметра /confdir",
-                        "Ошибка параметров командной строки", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
 
-                    Application.Run(new frmCLIHelp());
-                    return;
-                }
-            }
-            else //Параметра /confdir нет
+            if (!CommonClass.NoPortable) //портабельный режим
             {
-                if (!CommonClass.NoPortable) //параметра /d тоже
-                {
-                    //конфиги в директории с программой
-                    CommonClass.ConfigPath =
-                        CommonClass.AddSlash(Application.StartupPath);                     
-                }
+                //конфиги в директории с программой
+                CommonClass.ConfigPath =
+                    CommonClass.AddSlash(Application.StartupPath);
             }
+            
             Application.Run(new frmMain());
         }
     }

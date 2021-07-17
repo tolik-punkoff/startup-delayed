@@ -4,7 +4,7 @@ addfont; Arial;14;Bold;Slogan;
 
 scene;20;
 addstring;StartupDelayed;Group;
-addstring;v 0.0.1b;Group;
+addstring;v 0.0.2;Group;
 addstring;Распространяется бесплатно;Names;
 addstring;                      ;Names;
 addstring;Developers;Group;

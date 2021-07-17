@@ -69,7 +69,7 @@
             this.lblProgName.Name = "lblProgName";
             this.lblProgName.Size = new System.Drawing.Size(305, 20);
             this.lblProgName.TabIndex = 2;
-            this.lblProgName.Text = "StartupDelayed v 0.0.1b";
+            this.lblProgName.Text = "StartupDelayed v 0.0.2";
             this.lblProgName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCopyright
@@ -79,7 +79,7 @@
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(317, 50);
             this.lblCopyright.TabIndex = 3;
-            this.lblCopyright.Text = "(L) PunkArr[], L.S. [Wildsoft], 2018";
+            this.lblCopyright.Text = "(L)  L.S. [Wildsoft], 2018-2020";
             this.lblCopyright.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pctMessages

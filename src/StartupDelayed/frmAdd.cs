@@ -38,18 +38,21 @@ namespace StartupDelayed
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTaskPath.Text.Trim()))
+            //string.IsNullOrEmpty(txtTaskPath.Text.Trim())
+            string wp = CommonClass.WrongPath(txtTaskPath.Text.Trim());
+            if (wp != string.Empty)
             {
-                MessageBox.Show("Заполните 'Путь'", "Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ошибка в поле 'Путь': " + wp, "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            
             if (string.IsNullOrEmpty(txtTaskName.Text.Trim()))
             {
                 MessageBox.Show("Заполните 'Название'", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 return;
-            }
+            }            
 
             if (!System.IO.File.Exists(txtTaskPath.Text.Trim()))
             {
